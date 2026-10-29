@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion360",
+	"type": "script",
+	"author": "Isxqwe",
+	"description": {
+		"": "Changes every hole inside a diameter range to one target diameter, on a body or in a sketch."
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}

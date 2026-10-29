@@ -1,0 +1,10 @@
+{
+	"autodeskProduct": "Fusion360",
+	"type": "script",
+	"author": "Isxqwe",
+	"description": {
+		"": "Cuts a hexagonal lightening pattern into a planar face, keeping a solid border and a margin around every hole."
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true
+}
