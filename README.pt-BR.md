@@ -1,6 +1,14 @@
 # Scripts do Fusion 360 para chapas mais leves
 
-Dois scripts em Python para o Autodesk Fusion 360 que agilizam o projeto de chapas cortadas a laser ou impressas em 3D, como as chapas do chassi de um robô. A interface dos scripts é em inglês.
+[![Fusion 360](https://img.shields.io/badge/Fusion%20360-script-F37321?logo=autodesk&logoColor=white)](#instalação)
+[![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)](HoneycombLightening/HoneycombLightening.py)
+[![Licença: MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-green)](LICENSE)
+
+**Colmeia de alívio e padronização de furos para chapas cortadas a laser ou impressas em 3D, num clique.**
+
+Dois scripts em Python para o Autodesk Fusion 360 que agilizam o projeto de chapas como as do chassi de um robô. Cada um roda em segundos e é desfeito com um único Ctrl+Z. A interface dos scripts é em inglês.
+
+![Colmeia recortada numa placa de exemplo: 89 hexágonos inteiros, longe da borda e de todos os furos](docs/images/honeycomb-example.png)
 
 | Script | O que faz |
 | --- | --- |
@@ -20,8 +28,6 @@ Cada script roda como um comando normal do Fusion: um **Ctrl+Z** desfaz tudo o q
 
 ## HoneycombLightening
 
-![Colmeia recortada numa placa de exemplo](docs/images/honeycomb-example.png)
-
 Selecione a face de cima da placa e o script recorta os hexágonos:
 
 - **Só hexágonos inteiros:** nenhum é cortado pela borda ou por um furo.
@@ -29,6 +35,7 @@ Selecione a face de cima da placa e o script recorta os hexágonos:
 - **Cantos arredondados** em todos os hexágonos (linhas e arcos de verdade no sketch).
 - **Posição otimizada:** testa 16 posições da malha e fica com a que encaixa mais hexágonos.
 - Cria um sketch chamado *Honeycomb lightening* e um único corte por extrusão, limitado ao corpo da placa. Nenhum outro corpo é cortado.
+- Mostra quantos hexágonos recortou e quanto do volume da placa foi removido.
 
 | Parâmetro | Padrão | Observação |
 | --- | --- | --- |
@@ -60,6 +67,13 @@ Selecione um **corpo** (recomendado) ou um **sketch**, defina a faixa de diâmet
 - **Fica de fora de propósito:** pontas de rasgo (arcos, não círculos inteiros), pinos e standoffs (cilindros por fora), círculos projetados e tudo o que estiver fora da faixa.
 - **Count only** mostra o que seria alterado, sem alterar nada.
 
+| Parâmetro | Padrão | Observação |
+| --- | --- | --- |
+| Minimum diameter (above) | 3 mm | A faixa não inclui este valor |
+| Maximum diameter (up to) | 4 mm | A faixa inclui este valor |
+| New diameter | 3 mm | Diâmetro final de todos os furos encontrados |
+| Count only | desligado | Só conta, não altera |
+
 Exemplo: para levar furos de 2,5 mm a 3,0 mm, use mínimo 2,4, máximo 2,9 e novo 3,0.
 
 Um círculo **projetado** num sketch novo é só uma referência da aresta: mudar ele não muda a peça. Selecione o corpo.
@@ -70,6 +84,16 @@ Um círculo **projetado** num sketch novo é só uma referência da aresta: muda
 - Corte uma plaquinha de teste com furos de 2,8 a 3,3 mm antes da peça: o kerf muda com a máquina e o material.
 - Se a rosca está em pilares de metal, a chapa só precisa de furo passante. Não rosqueie acrílico: ele trinca.
 - Não use trava-rosca líquido perto de acrílico: ele ataca o plástico e causa trincas. Use porca com anel de nylon e arruela.
+
+## Observações
+
+- Testado no Fusion 360 para Windows (outubro de 2026). As unidades são milímetros.
+
+## Como contribuir
+
+Relatos de bug, ideias e pull requests são bem-vindos. Se um script falhar numa peça sua, abra uma issue com um print da face que você selecionou e a mensagem de erro.
+
+Se os scripts te pouparam tempo, uma ⭐ ajuda outras pessoas a encontrarem o projeto.
 
 ## Licença
 
