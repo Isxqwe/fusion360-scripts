@@ -1,6 +1,14 @@
 # Fusion 360 scripts for lightweight plates
 
-Two Python scripts for Autodesk Fusion 360 that speed up the design of laser-cut or 3D-printed plates, such as robot chassis plates.
+[![Fusion 360](https://img.shields.io/badge/Fusion%20360-script-F37321?logo=autodesk&logoColor=white)](#install)
+[![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)](HoneycombLightening/HoneycombLightening.py)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
+**Honeycomb lightening and hole cleanup for laser-cut and 3D-printed plates, in one click.**
+
+Two Python scripts for Autodesk Fusion 360 that speed up the design of plates such as robot chassis plates. Each one runs in seconds and is undone with a single Ctrl+Z.
+
+![Honeycomb pattern cut into a sample plate: 89 whole cells, clear of the border and every hole](docs/images/honeycomb-example.png)
 
 | Script | What it does |
 | --- | --- |
@@ -19,8 +27,6 @@ Two Python scripts for Autodesk Fusion 360 that speed up the design of laser-cut
 Each script runs as a normal Fusion command: one **Ctrl+Z** undoes everything it did.
 
 ## HoneycombLightening
-
-![Honeycomb pattern cut into a sample plate](docs/images/honeycomb-example.png)
 
 Select the top face of a plate and the script cuts hexagonal cells into it:
 
@@ -82,7 +88,12 @@ A circle you **projected** into a new sketch is only a reference to the edge: re
 ## Notes
 
 - Tested on Fusion 360 for Windows (October 2026). Units are millimetres.
-- Bug reports and pull requests are welcome.
+
+## Contributing
+
+Bug reports, ideas and pull requests are welcome. If a script fails on one of your parts, open an issue with a screenshot of the face you selected and the error message.
+
+If these scripts saved you time, a ⭐ helps other people find them.
 
 ## License
 
